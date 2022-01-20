@@ -1,4 +1,4 @@
-FROM node:16.9.0
+FROM node:16.9.0 as build
 
 
 WORKDIR /src
@@ -12,8 +12,11 @@ ARG branch=master
 
 ADD https://github.com/$name/$project/archive/$branch.tar.gz /tmp/$project-$branch.tar.gz
 RUN tar xvfz /tmp/${project}-$branch.tar.gz -C /src --strip-components=1
-RUN ls -la /src/
+
 RUN yarn
+COPY data/ /src
 RUN yarn build
-RUN mv /src/dist /app
-WORKDIR /app
+
+FROM netresearch/node-webserver:latest as webserver
+COPY --from=build /src/dist /app/public
+WORKDIR /app/public

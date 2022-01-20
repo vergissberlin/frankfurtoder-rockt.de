@@ -2,7 +2,10 @@ version: '3.5'
 
 services:
   app:
-    image: netresearch/node-webserver
+    image: vergissberlin/frankfurtoder-rockt-de
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: ${COMPOSE_PROJECT_NAME}-httpd
     labels:
       - traefik.enable=true
@@ -14,9 +17,6 @@ services:
       - traefik.http.services.${COMPOSE_PROJECT_NAME}.loadbalancer.server.port=${PORT}
     expose:
       - ${PORT}
-    working_dir: /app/public
-    volumes:
-      - ./app/dist:/app/public:ro
     restart: unless-stopped
 
 networks:

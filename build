@@ -3,9 +3,12 @@
 # Get player
 git submodule update --init --recursive
 
+# Create build service
+dbuild="docker run -it --rm -v $(pwd)/app:/src -w /src node:16.9.0-alpine";
+
 # Install player
 cd app
-yarn
+$dbuild yarn
 
 # Override playlist
 rm -rf src/mocks/ src/assets/
@@ -13,7 +16,7 @@ cp -r ../data/src/mocks src
 cp -r ../data/src/assets src
 
 # Build player
-yarn build
+$dbuild yarn build
 cd ..
 
 # Build Docker image

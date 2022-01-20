@@ -1,0 +1,11 @@
+/*
+
+!/data/
+!/.env
+!/.gitignore
+!/.gitmodules
+!/build
+!/docker-compose.yml
+!/Dockerfile
+!/LICENSE
+!/README.md

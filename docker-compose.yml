@@ -2,7 +2,7 @@ version: '3.5'
 
 services:
   app:
-    image: vergissberlin/frankfurtoder-rockt-de
+    image:  ghcr.io/vergissberlin/frankfurtoder-rockt.de
     build:
       context: .
       dockerfile: Dockerfile

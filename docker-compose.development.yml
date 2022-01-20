@@ -1,0 +1,11 @@
+version: '3.6'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./app/dist:/app/public:ro
+    ports:
+      - '8080:8080'

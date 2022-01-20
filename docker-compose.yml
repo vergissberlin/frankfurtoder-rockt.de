@@ -3,9 +3,6 @@ version: '3.5'
 services:
   app:
     image:  ghcr.io/vergissberlin/frankfurtoder-rockt.de:main
-    build:
-      context: .
-      dockerfile: Dockerfile
     container_name: ${COMPOSE_PROJECT_NAME}-httpd
     labels:
       - traefik.enable=true

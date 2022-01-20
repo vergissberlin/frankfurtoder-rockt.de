@@ -1,11 +1,8 @@
 FROM node:16.13.2 as build
 
-
 WORKDIR /src
 
-# COPY app/dist /app
 # https://github.com/Davigl/vue-music-player
-
 ARG name=Davigl
 ARG project=vue-music-player
 ARG branch=master

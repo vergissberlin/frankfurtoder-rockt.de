@@ -18,7 +18,3 @@ cp -r ../data/src/assets src
 # Build player
 $dbuild yarn build
 cd ..
-
-# Build Docker image
-# docker build -t ffor .
-

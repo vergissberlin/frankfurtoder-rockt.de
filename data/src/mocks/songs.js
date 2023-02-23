@@ -9,7 +9,7 @@ const songs = [
   },
   {
     title: "Jumanji",
-    artist: "Azealia Banks",
+    artist: "Azealia Banasdasdasdasdasdasdks",
     seconds: 174,
     cover: require("../assets/images/azealia banks - jumanji.jpg"),
     src: require("../assets/audios/Azealia Banks - Jumanji.mp3")

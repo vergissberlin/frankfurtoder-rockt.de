@@ -7,6 +7,7 @@
 !/.gitignore
 !/.gitmodules
 !/build
+!/dist
 !/docker-compose.yml
 !/docker-compose.development.yml
 !/docker-compose.staging.yml
